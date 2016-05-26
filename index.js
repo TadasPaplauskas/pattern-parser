@@ -18,7 +18,7 @@ var parse = function(text, patterns)
         if (args)
         {
             args = args.slice(1); // remove first element because it will be a full match
-            callback(...args);
+            callback.apply(null, args);
             return true;
         }
     }

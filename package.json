@@ -1,6 +1,6 @@
 {
     "name": "pattern-parser",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "A simple npm package to parse strings based on predefined patterns and route matched arguments to callbacks. No other dependencies.",
     "main": "index.js",
     "scripts": {
