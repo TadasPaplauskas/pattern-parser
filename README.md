@@ -36,7 +36,7 @@ var patterns = [
 ];
 
 // a message you want to parse
-var = 'Remind me to pay the taxes tomorrow';
+var message = 'Remind me to pay the taxes tomorrow';
 
 // parser stops after the first match is found, so the order of patterns is important.
 // matching is case-insensitive

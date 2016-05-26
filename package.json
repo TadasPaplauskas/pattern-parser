@@ -1,11 +1,34 @@
 {
-  "name": "pattern-parser",
-  "version": "0.1.0",
-  "description": "A simple npm package to parse strings based on predefined patterns and route matched arguments to callbacks. No other dependencies.",
-  "main": "pattern-parser.js",
-  "scripts": {
-    "test": "mocha"
-  },
-  "author": "Tadas Paplauskas (https://paplauskas.lt)",
-  "license": "MIT"
+    "name": "pattern-parser",
+    "version": "0.1.2",
+    "description": "A simple npm package to parse strings based on predefined patterns and route matched arguments to callbacks. No other dependencies.",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha"
+    },
+    "repository" :
+    {
+        "type" : "git",
+        "url" : "https://github.com/TadasPaplauskas/pattern-parser.git"
+    },
+    "bugs": {
+        "url" : "https://github.com/TadasPaplauskas/pattern-parser/issues"
+    },
+    "homepage": "https://github.com/TadasPaplauskas/pattern-parser",
+    "author": {
+        "name": "Tadas Paplauskas",
+        "url": "https://paplauskas.lt"
+    },
+    "license": "MIT",
+    "keywords": [
+       "npm",
+       "pattern",
+       "parser",
+       "parse",
+       "recognition",
+       "text",
+       "bots",
+       "bot",
+       "templates"
+    ]
 }
