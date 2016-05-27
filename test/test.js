@@ -1,5 +1,3 @@
-// nodemon -x "npm test"
-
 var assert = require('assert');
 var parse = require('../index');
 var noMatch = 'Test text did not match a pattern';
@@ -78,5 +76,4 @@ describe('Parse expressions:', function () {
                 }
             }]), noMatch);
     });
-
 });

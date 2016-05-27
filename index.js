@@ -1,4 +1,4 @@
-var parse = function(text, patterns)
+var parse = function(text, patterns, notFound)
 {
     var pattern, callback, regex, args;
     for (var i = 0; i < patterns.length; i++)
@@ -21,6 +21,11 @@ var parse = function(text, patterns)
             callback.apply(null, args);
             return true;
         }
+    }
+    // nothing was found
+    if (notFound && typeof notFound === 'function')
+    {
+        notFound(text);
     }
     return false;
 };
