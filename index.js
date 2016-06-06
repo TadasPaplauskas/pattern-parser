@@ -30,7 +30,7 @@ var parse = function(text, patterns, notFound, context)
     // nothing was found
     if (notFound && typeof notFound === 'function')
     {
-        notFound.apply(context, text);
+        notFound.call(context, text);
     }
     return false;
 };
