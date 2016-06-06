@@ -1,10 +1,15 @@
-var parse = function(text, patterns, notFound)
+var parse = function(text, patterns, notFound, context)
 {
     var pattern, callback, regex, args;
     for (var i = 0; i < patterns.length; i++)
     {
         pattern = patterns[i].pattern;
         callback = patterns[i].callback;
+
+        if (!pattern || typeof pattern !== 'string' || !callback || typeof callback !== 'function')
+        {
+            throw ('Please check your inputs. Patterns should be strings and callbacks should be functions.');
+        }
 
         regex = pattern
                 .replace(/{string}/gi, '(.*?)')
@@ -18,14 +23,14 @@ var parse = function(text, patterns, notFound)
         if (args)
         {
             args = args.slice(1); // remove first element because it will be a full match
-            callback.apply(null, args);
+            callback.apply(context, args);
             return true;
         }
     }
     // nothing was found
     if (notFound && typeof notFound === 'function')
     {
-        notFound(text);
+        notFound.apply(context, text);
     }
     return false;
 };

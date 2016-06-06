@@ -12,15 +12,16 @@ npm install pattern-parser --save
 ## How do I use it?
 
 ~~~
-var parse = require('pattern-parser');
-boolean parse(string message, array patterns[, function not_found])
+var parse = require('pattern-parser')
+boolean parse(string message, array patterns[, function not_found, object context])
 ~~~
-parser takes three arguments:
-* a message to parse
-* an array of patterns
+parser takes four arguments:
+* a message to parse.
+* an array of patterns.
 * (optional) callback function that will be executed if no match is found. Original message is passed as an argument.
+* (optional) an object to be passed as a context to all callbacks. For example, if you would put `{ id: 123 }` as a context, then every callback (including not_found) could access that parameter through `this.id`.
 
-Parser also returns true if a match was found and false otherwise. Parser stops after the first match is found, so the order of patterns is important.
+Parser will return true if a match was found or false otherwise. Parser stops after the first match is found, so the order of patterns is important.
 
 Here's how to write patterns:
 ~~~
@@ -43,7 +44,7 @@ You can use regular expressions in patterns. There are a few useful helpers to m
 * {integer} - matches only integers.
 * {float} - matches only numbers with floating point.
 
-### Example
+## Example
 ~~~
 var parse = require('pattern-parser');
 
