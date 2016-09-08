@@ -8,7 +8,7 @@ var parse = function(text, patterns, notFound, context)
 
         if (!pattern || typeof pattern !== 'string' || !callback || typeof callback !== 'function')
         {
-            throw ('Please check your inputs. Patterns should be strings and callbacks should be functions.');
+            throw ('pattern-parser: check your inputs. Patterns should be strings and callbacks should be functions.');
         }
 
         regex = pattern
