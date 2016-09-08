@@ -18,12 +18,9 @@ var patterns = [
     }
 ];
 
-// a message you want to parse
-var message = 'Remind me to pay the taxes tomorrow';
-
 // parser stops after the first match is found, so the order of patterns is important.
 // matching is case-insensitive
-parse(message, patterns);
+parse('Remind me to pay the taxes tomorrow', patterns);
 
 // what if no match is found?
 parse('Order bazillion rolls of toilet paper', patterns, function(msg) { console.log('Sorry, could not understand what you meant by: ' + msg); });

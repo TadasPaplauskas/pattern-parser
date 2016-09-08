@@ -23,8 +23,14 @@ var parse = function(text, patterns, notFound, context)
         if (args)
         {
             args = args.slice(1); // remove first element because it will be a full match
-            callback.apply(context, args);
-            return true;
+
+            var result = callback.apply(context, args);
+
+            if (result === undefined) {
+                return true;
+            } else {
+                return callback.apply(context, args);
+            }
         }
     }
     // nothing was found

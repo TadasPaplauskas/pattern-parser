@@ -21,7 +21,7 @@ parser takes four arguments:
 * (optional) callback function that will be executed if no match is found. Original message is passed as an argument.
 * (optional) an object to be passed as a context to all callbacks. For example, if you would put `{ id: 123 }` as a context, then every callback (including not_found) could access that parameter through `this.id`.
 
-Parser will return true if a match was found or false otherwise. Parser stops after the first match is found, so the order of patterns is important.
+Parser will return a callback result if a match was found or false otherwise. Parser stops after the first match is found, so the order of patterns is important.
 
 Here's how to write patterns:
 ~~~
